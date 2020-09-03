@@ -19,6 +19,7 @@ A prototype of virtual machine that will be implemented with C#.
 Yet Another Intermediate Language.  
 It will be the instruction set that the `YAVM` will consume and interpret.   
 
-Features:
+Design:
 * Register-based, unlike `CIL` and `JVM` which are both stack-based, more like Android DEX.  
-* Object-Oriented. More like `CIL`.
+* Supporting only single-inheritance object-oriented. More like `CIL`.
+* Supporting garbage collection and RAII semantic.
