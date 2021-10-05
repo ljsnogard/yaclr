@@ -1,0 +1,14 @@
+**/log[s]
+**/.vscode
+**/.vs
+**/.idea
+
+# Xmake cache
+**/.xmake
+**/build
+**/project.lock
+
+# MacOS Cache
+.DS_Store
+
+

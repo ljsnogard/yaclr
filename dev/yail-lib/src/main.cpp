@@ -1,8 +1,11 @@
-#include "interface.h"
+#include "yail/op0x00_nop_t.h"
+
 #include <iostream>
+#include <typeinfo>
 
 int main(int argc, char** argv)
 {
-    std::cout << Yaclr::Yail::hello_world() << std::endl;
-    return 0;
+  yaclr::yail::op0x00_nop_t nop;
+  std::cout << "opcode for " << typeid(nop).name() << " is: " << nop.opcode().code << std::endl;
+  return 0;
 }

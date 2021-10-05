@@ -3,7 +3,7 @@ set_languages("c++17")
 
 target("yail-lib")
     set_kind("static")
-    add_files("src/interface.cpp")
+    add_files("src/**.cpp")
 
 target("yail-lib_demo")
     set_kind("binary")
