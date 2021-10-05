@@ -3,8 +3,9 @@
 #include <iterator>
 #include <string>
 #include <regex>
-#include <typeinfo>
-#include <sstream>
+#include <typeinfo> // typeid()
+#include <iostream> // string::erase
+#include <sstream>  // std::stringstream
 
 #pragma once
 
@@ -12,7 +13,7 @@ namespace yaclr::yail
 {
   class instruction_t
   {
-    protected:
+    public:
       template <typename T>
       class generate_opcode_for
       {
@@ -21,8 +22,9 @@ namespace yaclr::yail
 
           static std::uint32_t find_opcode_(void) {
             const T instruction_;
-            const std::regex typename_regex_("op0x[a-f0-9]+");
+            const std::regex typename_regex_("op0x[0-9a-f]+");
             const std::string typename_(typeid(instruction_).name());
+            const std::size_t PREFIX_LEN = 4; // length of "op0x"
             std::smatch typename_match_;
             const bool match_found_ = std::regex_search(typename_, typename_match_, typename_regex_);
 
@@ -31,7 +33,10 @@ namespace yaclr::yail
 
             std::uint32_t u32code;
             std::stringstream ss;
-            ss << std::hex << typename_match_[0];
+
+            std::string hex_str_(typename_match_[0].str().substr(PREFIX_LEN));
+            const std::string& trimmed = hex_str_.erase(0, hex_str_.find_first_not_of('0'));
+            ss << std::hex << trimmed;
             ss >> u32code;
             return u32code;
           }

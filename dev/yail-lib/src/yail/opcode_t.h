@@ -11,8 +11,8 @@ namespace yaclr::yail
 
       opcode_t(uint32_t code);
 
+    public:
       bool operator<(const opcode_t&) const;
-
       bool operator==(const opcode_t&) const;
   };
 }
