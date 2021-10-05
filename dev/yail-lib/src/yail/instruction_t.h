@@ -13,7 +13,7 @@ namespace yaclr::yail
 {
   class instruction_t
   {
-    public:
+    protected:
       template <typename T>
       class generate_opcode_for
       {
@@ -31,11 +31,14 @@ namespace yaclr::yail
             if (false == match_found_)
               throw typename_;
 
+            std::string hex_str_(typename_match_[0].str().substr(PREFIX_LEN));
+            const std::size_t pos_first_not_0_ = hex_str_.find_first_not_of('0');
+            if (pos_first_not_0_ == std::string::npos)
+              return 0;
+
             std::uint32_t u32code;
             std::stringstream ss;
-
-            std::string hex_str_(typename_match_[0].str().substr(PREFIX_LEN));
-            const std::string& trimmed = hex_str_.erase(0, hex_str_.find_first_not_of('0'));
+            const std::string& trimmed = hex_str_.erase(0, pos_first_not_0_);
             ss << std::hex << trimmed;
             ss >> u32code;
             return u32code;
