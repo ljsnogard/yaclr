@@ -9,7 +9,6 @@ namespace yaclr::yail
   {
     private:
       const register_id_t id_;
-
       const primitive_type_t data_type_;
 
     public:
@@ -17,7 +16,6 @@ namespace yaclr::yail
 
     public:
       register_id_t id(void) const;
-
       primitive_type_t data_type(void) const;
   };
 }

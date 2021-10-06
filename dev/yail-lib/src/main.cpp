@@ -1,5 +1,5 @@
-#include "yail/op0x00_nop_t.h"
-#include "yail/op0x01_break_t.h"
+#include "yail/instructions/op0x00_nop_t.h"
+#include "yail/instructions/op0x01_break_t.h"
 
 #include <iostream>
 #include <typeinfo>
