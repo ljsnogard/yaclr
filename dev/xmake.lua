@@ -1,14 +1,17 @@
 add_rules("mode.debug", "mode.release")
 set_languages("c++17")
+add_requires("catch2 >=2.13")
 
 target("yail-lib")
     set_kind("static")
-    add_files("src/**.cpp")
+    add_files("yail-lib/src/**.cpp")
 
-target("yail-lib_demo")
+target("yail-tests")
     set_kind("binary")
     add_deps("yail-lib")
-    add_files("src/main.cpp")
+    add_includedirs("yail-lib/src")
+    add_packages("catch2")
+    add_files("yail-tests/src/**.cpp")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
