@@ -1,4 +1,4 @@
-#include "register_t.h"
+#include <yail/register_t.h>
 
 namespace yaclr::yail
 {
@@ -10,7 +10,7 @@ namespace yaclr::yail
 
   register_id_t register_t::id(void) const {
     return this->id_;
-  }
+  };
 
 
   primitive_type_t register_t::data_type(void) const {

@@ -4,6 +4,7 @@ add_requires("catch2 >=2.13")
 
 target("yail-lib")
     set_kind("static")
+    add_includedirs("yail-lib/src")
     add_files("yail-lib/src/**.cpp")
 
 target("yail-tests")

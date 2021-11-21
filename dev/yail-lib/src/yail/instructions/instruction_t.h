@@ -1,4 +1,4 @@
-#include "../opcode_t.h"
+#include <yail/opcode_t.h>
 
 #include <iterator>
 #include <string>

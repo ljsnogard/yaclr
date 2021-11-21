@@ -1,4 +1,4 @@
-#include "op0x00_nop_t.h"
+#include <yail/instructions/op0x00_nop_t.h>
 
 namespace yaclr::yail
 {

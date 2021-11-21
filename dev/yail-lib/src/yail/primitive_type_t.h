@@ -32,15 +32,16 @@ namespace yaclr::yail
       static const primitive_type_t u64;     // 64-bit unsigned integer
       static const primitive_type_t i64;     // 64-bit signed integer
       static const primitive_type_t nuint;   // native uintptr_t
-      static const primitive_type_t u16char; // utf-16 char
+      static const primitive_type_t wchar;   // utf-16 LE wide char
 
       static const primitive_type_t f32;     // float
       static const primitive_type_t f64;     // double
       static const primitive_type_t f128;    // 128bit floating point numerics
 
-      static const primitive_type_t fn_info; // a structure representing function info
-      static const primitive_type_t ty_info; // a structure representing type info
-      static const primitive_type_t ty_val;  // a value with unspecified generic type
+      static const primitive_type_t func_info;  // a structure representing function info
+      static const primitive_type_t type_info;  // a structure representing type info
+      static const primitive_type_t gentyp_arg; // a value with unspecified generic type
+      static const primitive_type_t fiber_info; // a structure representing fiber info
 
     private:
       const uint16_t type_code_;
@@ -56,17 +57,18 @@ namespace yaclr::yail
       static const uint16_t C_I32   = 0x0022;
       static const uint16_t C_I64   = 0x0023;
 
-      static const uint16_t C_NUINT = 0x0001;
-      static const uint16_t C_U16CH = 0x0002;
-      static const uint16_t C_BOOL  = 0x0003;
+      static const uint16_t C_NUINT = 0x0003;
+      static const uint16_t C_WCHAR = 0x0002;
+      static const uint16_t C_BOOL  = 0x0001;
 
       static const uint16_t C_F32   = 0x0032;
       static const uint16_t C_F64   = 0x0033;
       static const uint16_t C_F128  = 0x0034;
 
-      static const uint16_t C_FINFO = 0x0040;
-      static const uint16_t C_TINFO = 0x0041;
-      static const uint16_t C_TYVAL = 0x0042;
+      static const uint16_t C_FUNC_INFO  = 0x0040;
+      static const uint16_t C_TYPE_INFO  = 0x0041;
+      static const uint16_t C_GENTYP_ARG = 0x0042;
+      static const uint16_t C_FIBER_INFO = 0x0043;
 
     private:
       primitive_type_t(uint16_t code);

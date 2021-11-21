@@ -1,5 +1,5 @@
-#include "register_id_t.h"
-#include "primitive_type_t.h"
+#include <yail/register_id_t.h>
+#include <yail/primitive_type_t.h>
 
 #pragma once
 
