@@ -40,8 +40,9 @@ namespace yaclr::yail
 
       static const primitive_type_t func_info;  // a structure representing function info
       static const primitive_type_t type_info;  // a structure representing type info
-      static const primitive_type_t gentyp_arg; // a value with unspecified generic type
-      static const primitive_type_t fiber_info; // a structure representing fiber info
+      static const primitive_type_t type_symb;  // a generic type argument symbol
+      static const primitive_type_t coro_info;  // a structure representing coroutine(fiber) info
+      static const primitive_type_t cncp_info;  // a structure representing a concept
 
     private:
       const uint16_t type_code_;
@@ -65,10 +66,11 @@ namespace yaclr::yail
       static const uint16_t C_F64   = 0x0033;
       static const uint16_t C_F128  = 0x0034;
 
-      static const uint16_t C_FUNC_INFO  = 0x0040;
-      static const uint16_t C_TYPE_INFO  = 0x0041;
-      static const uint16_t C_GENTYP_ARG = 0x0042;
-      static const uint16_t C_FIBER_INFO = 0x0043;
+      static const uint16_t C_FUNC_INFO = 0x0040;
+      static const uint16_t C_TYPE_INFO = 0x0041;
+      static const uint16_t C_TYPE_SYMB = 0x0042;
+      static const uint16_t C_CORO_INFO = 0x0043;
+      static const uint16_t C_CNCP_INFO = 0x0044;
 
     private:
       primitive_type_t(uint16_t code);

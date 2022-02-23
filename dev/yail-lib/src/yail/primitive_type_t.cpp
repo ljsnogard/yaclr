@@ -18,10 +18,11 @@ namespace yaclr::yail
   const primitive_type_t primitive_type_t::f64    (primitive_type_t::C_F64);    // double
   const primitive_type_t primitive_type_t::f128   (primitive_type_t::C_F128);   // 128bit floating point numerics
 
-  const primitive_type_t primitive_type_t::func_info (primitive_type_t::C_FUNC_INFO);  // a structure representing function info
-  const primitive_type_t primitive_type_t::type_info (primitive_type_t::C_TYPE_INFO);  // a structure representing type info
-  const primitive_type_t primitive_type_t::gentyp_arg(primitive_type_t::C_GENTYP_ARG); // a value with unspecified generic type
-  const primitive_type_t primitive_type_t::fiber_info(primitive_type_t::C_FIBER_INFO); // a structure representing fiber info
+  const primitive_type_t primitive_type_t::func_info(primitive_type_t::C_FUNC_INFO); // a structure representing function info
+  const primitive_type_t primitive_type_t::type_info(primitive_type_t::C_TYPE_INFO); // a structure representing type info
+  const primitive_type_t primitive_type_t::type_symb(primitive_type_t::C_TYPE_SYMB); // a generic type argument symbol
+  const primitive_type_t primitive_type_t::coro_info(primitive_type_t::C_CORO_INFO); // a structure representing coroutine(fiber) info
+  const primitive_type_t primitive_type_t::cncp_info(primitive_type_t::C_CNCP_INFO);
 
   primitive_type_t::primitive_type_t(uint16_t code) : type_code_(code)
   {}
